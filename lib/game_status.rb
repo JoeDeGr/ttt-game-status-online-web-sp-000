@@ -18,17 +18,13 @@ WIN_COMBINATIONS = [
 def won?(board)
  if board.include?("X"||"O")
    WIN_COMBINATIONS.each do |win_comb|
-     #win_comb.each do |move|
-     #windex << board[move]
-     #if windex.all? {|i| i == array[0]}
-
-     windex_1 = win_comb[0]
-     windex_2 = win_comb[1]
-     windex_3 = win_comb[2]
-     position_1 = board[windex_1]
-     position_2 = board[windex_2]
-     position_3 = board[windex_3]
-     if [position_1, position_2, position_3].all? {|i| i == position_1} && position_taken?(board, windex_1 )
+#     windex_1 = win_comb[0]
+#     windex_2 = win_comb[1]
+#     windex_3 = win_comb[2]
+#     position_1 = board[windex_1]
+#     position_2 = board[windex_2]
+#     position_3 = board[windex_3]
+     if [board[win_comb[0]], board[win_comb[1]], board[win_comb[2]]].all? {|i| i == board[win_comb[0]]} && position_taken?(board, win_comb[0] )
        return win_comb
      end
    end
